@@ -1,0 +1,13 @@
+name: 'A required check that always passes'
+on:
+  pull_request:
+    types: [opened, reopened]
+  
+jobs:
+  always-pass:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            return true
